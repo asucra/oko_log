@@ -119,3 +119,6 @@ MVPリリース時
 直接変更できるものではなく、一旦メールなどを介して専用のページで変更する画面遷移になっているか？
 - [x] メールアドレス
 - [x] パスワード
+
+### ER図リンク
+https://drive.google.com/file/d/1yVJn91ma8yTHSvlZOiSUq0Sc2a4LCN5F/view?usp=sharing
