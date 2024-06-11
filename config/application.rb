@@ -20,7 +20,13 @@ module App
     #
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.
-    #
+    # generateで作成されるファイル設定の変更
+    config.generators.system_tests = nil
+    config.generators do |g|
+      g.skip_routes true
+      g.helper false
+      g.test_framework nil
+    end
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
   end
