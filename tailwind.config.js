@@ -3,9 +3,18 @@ module.exports = {
     './app/views/**/*.html.erb',
     './app/helpers/**/*.rb',
     './app/assets/stylesheets/**/*.css',
-    './app/javascript/**/*.js'
+    './app/javascript/**/*.js',
+    'node_modules/preline/dist/*.js'
   ],
   plugins: [
-    require('daisyui')
-  ]
+    require('daisyui'),
+    require('preline/plugin')
+  ],
+  theme: {
+    colors: {
+      'green': '#4C7671',
+      'white': 'FFFFFF',
+    }
+  }
+
 }
