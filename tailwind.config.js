@@ -11,10 +11,12 @@ module.exports = {
     require('preline/plugin')
   ],
   theme: {
-    colors: {
-      'green': '#4C7671',
-      'white': 'FFFFFF',
+    extend: {
+      colors: {
+        'green': '#4C7671',
+        'white': '#FFFFFF',
+        'yellow': '#FBC607',
+      }
     }
   }
-
 }
