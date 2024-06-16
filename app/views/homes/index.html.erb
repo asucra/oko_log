@@ -58,7 +58,7 @@
           <ul class="hs-accordion-group ps-3 pt-2" data-hs-accordion-always-open>
             <li class="hs-accordion" id="users-accordion-sub-1">
               <button type="button" class="hs-accordion-toggle w-full text-start flex items-center gap-x-3.5 py-2 px-2.5 hs-accordion-active:text-white hs-accordion-active:hover:bg-transparent text-sm text-white hover:text-white rounded-lg hover:bg-yellow">
-                アンガーログ入力
+                <%= link_to 'アンガーログ入力', new_anger_log_path %>
 
                 <svg class="hs-accordion-active:block ms-auto hidden size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
               </button>
@@ -85,7 +85,7 @@
 <!-- Content -->
 <div class="w-full pt-10 px-4 sm:px-6 md:px-8 lg:ps-72 ">
   <button class= "btn btn-xs sm:btn-sm md:btn-md lg:btn-lg bg-green text-white ">
-  <%= link_to "アンガーログを記録する", "#" %>
+  <%= link_to "アンガーログを記録する", new_anger_log_path  %>
   </button>
 </div>
 <!-- End Content -->
