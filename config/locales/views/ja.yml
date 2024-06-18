@@ -1,0 +1,4 @@
+ja:
+  time:
+    formats:
+      shout: "%m月%d日 %k時頃"
