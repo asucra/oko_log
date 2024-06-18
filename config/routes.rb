@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "welcomes#index"
-  resources :anger_logs, only: %i[index new create edit update]
+  resources :anger_logs, only: %i[index new create edit update destroy]
   get "homes" => "homes#index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

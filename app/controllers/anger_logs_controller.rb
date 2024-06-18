@@ -33,6 +33,13 @@ class AngerLogsController < ApplicationController
     end
   end
 
+  def destroy
+    @anger_log = current_user.anger_logs.find(params[:id])
+    @anger_log.destroy!
+    redirect_to anger_logs_path, success: '削除しました', status: :see_other
+
+  end
+
   private
 
   def anger_log_params
