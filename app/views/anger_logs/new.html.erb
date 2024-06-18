@@ -3,11 +3,55 @@
   <div class="mx-auto max-w-2xl">
     <div class="text-center">
       <h2 class="text-xl text-gray-800 font-bold sm:text-3xl dark:text-white">
-        <%= t('.title') %>
+        アンガーログを入力
       </h2>
     </div>
 
-    <%= render 'anger_logs/anger_log', anger_log: @anger_log %>
+    <!-- Card -->
+    <div class="mt-5 p-4 relative z-10 bg-light-green border rounded-xl sm:mt-10 md:p-10 dark:bg-neutral-900 dark:border-neutral-700">
+      <%= form_with model: @anger_log do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
+        <div class="mb-4 sm:mb-8">
+          <%= f.label :occurrence_at, class: "block mb-2 text-sm font-medium dark:text-white" %>
+          <%= f.datetime_local_field :occurrence_at, class: "py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" %>
+        </div>
+
+        <div class="mb-4 sm:mb-8">
+          <%= f.label :place, class:"block mb-2 text-sm font-medium dark:text-white" %>
+          <%= f.text_field :place, class: "py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" %>
+        </div>
+
+        <div>
+          <%= f.label :event, class: "block mb-2 text-sm font-medium dark:text-white" %>
+          <div class="mt-1">
+            <%= f.text_area :event, maxlength: '300', class: "py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" %>
+          </div>
+        </div>
+
+        <div>
+        <%= f.label :thought, class: "block mb-2 text-sm font-medium dark:text-white" %>
+        <div class="mt-1">
+          <%= f.text_area :thought, maxlength: '300', class: "py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" %>
+        </div>
+
+        <div>
+          <%= f.label :anger_level, class: "block mb-2 text-sm font-medium dark:text-white" %>
+          <%= f.number_field :anger_level, in: 1..10 %>
+        </div>
+
+        <div>
+        <%= f.label :review, class: "block mb-2 text-sm font-medium dark:text-white" %>
+        <div class="mt-1">
+          <%= f.text_area :review, maxlength: '300', class: "py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" %>
+        </div>
+
+        <div class="mt-6 grid">
+          <%= f.submit '記録する', class: "w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-green text-white hover:bg-dark-green disabled:opacity-50 disabled:pointer-events-none" %>
+        </div>
+      
+      <% end %>
+    </div>
+    <!-- End Card -->
   </div>
 </div>
 <!-- End Comment Form -->

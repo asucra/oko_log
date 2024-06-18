@@ -19,20 +19,6 @@ class AngerLogsController < ApplicationController
     end
   end
 
-  def edit
-    @anger_log = current_user.anger_logs.find(params[:id])
-  end
-
-  def update
-    @anger_log = current_user.anger_logs.find(params[:id])
-    if @anger_log.update(anger_log_params)
-      redirect_to anger_logs_path, success: '更新しました'
-    else
-      flash.now[:danger] = '更新に失敗しました'
-      render :edit, status: :unprocessable_entity
-    end
-  end
-
   private
 
   def anger_log_params
