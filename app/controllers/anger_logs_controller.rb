@@ -1,6 +1,10 @@
 class AngerLogsController < ApplicationController
   before_action :authenticate_user!
   
+  def index
+    @anger_logs = current_user.anger_logs.order(created_at: :desc)
+  end
+
   def new
     @anger_log = AngerLog.new
   end

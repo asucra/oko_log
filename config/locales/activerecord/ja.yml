@@ -1,0 +1,17 @@
+ja:
+  activerecord:
+    models:
+      user: ユーザー
+      anger_log: アンガーログ
+    attributes:
+      user:
+        email: メールアドレス
+        name: ニックネーム
+      anger_log:
+        occurrence_at: 日時
+        place: 場所
+        event: 怒りを感じた出来事
+        thought: 浮かんだ考え
+        anger_level: 怒りの強さ
+        review: 振り返り
+  
