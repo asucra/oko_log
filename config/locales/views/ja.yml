@@ -2,3 +2,15 @@ ja:
   time:
     formats:
       shout: "%m月%d日 %k時頃"
+  helpers:
+    submit:
+      create: 登録
+      submit: 保存
+      update: 更新
+  anger_logs:
+    new:
+      title: アンガーログ入力
+    index:
+      title: アンガーログ一覧
+    edit:
+      title: アンガーログ編集
