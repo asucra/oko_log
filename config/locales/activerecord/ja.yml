@@ -7,6 +7,8 @@ ja:
       user:
         email: メールアドレス
         name: ニックネーム
+        password: パスワード
+        password_confirmation: パスワード(確認)
       anger_log:
         occurrence_at: 日時
         place: 場所
