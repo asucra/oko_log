@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
   devise_for :users, controllers: { registrations: 'users/registrations'}
+
+  resource :profile, only: %i[show]
   root to: "welcomes#index"
   resources :anger_logs, only: %i[index new create edit update destroy]
   get "homes" => "homes#index"
