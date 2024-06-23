@@ -1,7 +1,7 @@
 class AngerLogsController < ApplicationController
   
   def index
-    @anger_logs = current_user.anger_logs.order(created_at: :desc)
+    @anger_logs = current_user.anger_logs.includes(:tags).order(created_at: :desc)
   end
 
   def new
@@ -10,11 +10,11 @@ class AngerLogsController < ApplicationController
 
   def create
     @anger_log = current_user.anger_logs.build(anger_log_params)
-    if @anger_log.save
+    if @anger_log.save_with_tags(tag_names: get_unique_tag_names)
       redirect_to anger_logs_path, success: '記録しました'
     else
       flash.now[:danger] =  '記録に失敗しました'
-      render :new, status: :unprocessable_entity
+      render :new
     end
   end
 
@@ -24,11 +24,12 @@ class AngerLogsController < ApplicationController
 
   def update
     @anger_log = current_user.anger_logs.find(params[:id])
-    if @anger_log.update(anger_log_params)
+    @anger_log.assign_attributes(anger_log_params)
+    if @anger_log.save_with_tags(tag_names: get_unique_tag_names)
       redirect_to anger_logs_path, success: '更新しました'
     else
       flash.now[:danger] = '更新に失敗しました'
-      render :edit, status: :unprocessable_entity
+      render :edit
     end
   end
 
@@ -43,6 +44,10 @@ class AngerLogsController < ApplicationController
 
   def anger_log_params
     params.require(:anger_log).permit(:occurrence_at, :place, :event, :thought, :anger_level, :review)
+  end
+
+  def get_unique_tag_names
+    params.dig(:anger_log, :tag_names).split(',').uniq || []
   end
 
 end
