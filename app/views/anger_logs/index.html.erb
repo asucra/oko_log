@@ -19,6 +19,9 @@
           <%= "怒りの強さ: #{ anger_log.anger_level }" %>
           <p>振り返り</p>
           <%= anger_log.review %>
+          <% anger_log.tags.each do |tag| %>
+            <%= "##{tag.name}" %>
+          <% end %>
       </div>
       <div class="flex h-4 w-4 text-green"%>
         <%= link_to edit_anger_log_path(anger_log), class: "btn btn-xs sm:btn-sm md:btn-md lg:btn-lg" do %>

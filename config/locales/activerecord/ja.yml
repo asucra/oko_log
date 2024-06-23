@@ -16,4 +16,5 @@ ja:
         thought: 浮かんだ考え
         anger_level: 怒りの強さ
         review: 振り返り
-  
+      tag:
+        name: タグ名
