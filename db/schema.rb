@@ -10,9 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_22_035507) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_23_093146) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "anger_log_emotions", force: :cascade do |t|
+    t.bigint "anger_log_id", null: false
+    t.bigint "emotion_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["anger_log_id", "emotion_id"], name: "index_anger_log_emotions_on_anger_log_id_and_emotion_id", unique: true
+    t.index ["anger_log_id"], name: "index_anger_log_emotions_on_anger_log_id"
+    t.index ["emotion_id"], name: "index_anger_log_emotions_on_emotion_id"
+  end
 
   create_table "anger_log_tags", force: :cascade do |t|
     t.bigint "tag_id", null: false
@@ -35,6 +45,12 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_22_035507) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_anger_logs_on_user_id"
+  end
+
+  create_table "emotions", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "tags", force: :cascade do |t|
@@ -61,6 +77,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_22_035507) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "anger_log_emotions", "anger_logs"
+  add_foreign_key "anger_log_emotions", "emotions"
   add_foreign_key "anger_log_tags", "anger_logs"
   add_foreign_key "anger_log_tags", "tags"
   add_foreign_key "anger_logs", "users"
