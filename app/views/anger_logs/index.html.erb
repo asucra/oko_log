@@ -17,6 +17,10 @@
           <p>考えたこと<p>
           <%= anger_log.thought %>
           <%= "怒りの強さ: #{ anger_log.anger_level }" %>
+          <p>怒り以外に感じた感情</p>
+          <% anger_log.emotions.each do |emotion| %>
+            <%= emotion.name %>
+          <% end %>
           <p>振り返り</p>
           <%= anger_log.review %>
           <% anger_log.tags.each do |tag| %>

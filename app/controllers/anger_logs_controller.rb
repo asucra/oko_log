@@ -1,7 +1,7 @@
 class AngerLogsController < ApplicationController
   
   def index
-    @anger_logs = current_user.anger_logs.includes(:tags).order(created_at: :desc)
+    @anger_logs = current_user.anger_logs.includes(:tags, :emotions).order(created_at: :desc)
   end
 
   def new
@@ -10,7 +10,7 @@ class AngerLogsController < ApplicationController
 
   def create
     @anger_log = current_user.anger_logs.build(anger_log_params)
-    if @anger_log.save_with_tags(tag_names: get_unique_tag_names)
+    if @anger_log.save_with_tags_and_emotions(tag_names: get_unique_tag_names, emotion_names: get_unique_emotion_names)
       redirect_to anger_logs_path, success: '記録しました'
     else
       flash.now[:danger] =  '記録に失敗しました'
@@ -48,6 +48,10 @@ class AngerLogsController < ApplicationController
 
   def get_unique_tag_names
     params.dig(:anger_log, :tag_names).split(',').uniq || []
+  end
+
+  def get_unique_emotion_names
+    params.dig(:anger_log, :emotion_names).split(',').uniq || []
   end
 
 end
