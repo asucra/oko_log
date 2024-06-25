@@ -13,7 +13,7 @@ class AngerLogsController < ApplicationController
       redirect_to anger_logs_path, success: '記録しました'
     else
       flash.now[:danger] = '記録に失敗しました'
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -24,11 +24,11 @@ class AngerLogsController < ApplicationController
   def update
     @anger_log = current_user.anger_logs.find(params[:id])
     @anger_log.assign_attributes(anger_log_params)
-    if @anger_log.save_with_tags(tag_names: get_unique_tag_names)
+    if @anger_log.save_with_tags_and_emotions(tag_names: get_unique_tag_names, emotion_names: get_unique_emotion_names)
       redirect_to anger_logs_path, success: '更新しました'
     else
       flash.now[:danger] = '更新に失敗しました'
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 
