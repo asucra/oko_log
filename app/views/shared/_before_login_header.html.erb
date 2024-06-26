@@ -1,16 +1,18 @@
 <header>
-  <div class="navbar bg-base-100">
-    <div class="flex-1">
-      <a class="btn btn-ghost text-xl">Oko_log</a>
+  <div class='container mx-auto' >
+    <div class="navbar bg-green text-white font-semibold py-3">
+      <div class="flex-1">
+        <a class="btn btn-ghost text-xl">Oko_log</a>
+      </div>
+      <div class="flex-none">
+        <ul class="menu menu-horizontal px-1">
+          <li><a>Link</a></li>
+          <li><a>Link</a></li>
+        </ul>
+      </div>
+      <button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg bg-yellow text-green">
+        <%= link_to 'ログイン', new_user_session_path %>
+      </button>
     </div>
-    <div class="flex-none">
-      <ul class="menu menu-horizontal px-1">
-        <li><a>Link</a></li>
-        <li><a>Link</a></li>
-      </ul>
-    </div>
-    <button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">
-      <%= link_to 'ログイン', new_user_session_path %>
-    </button>
   </div>
 </header>

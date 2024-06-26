@@ -19,6 +19,9 @@ module.exports = {
         'white': '#FFFFFF',
         'yellow': '#FBC607',
       }
-    }
-  }
+    },
+    container: {
+      center: ture,
+    },
+  },
 }
