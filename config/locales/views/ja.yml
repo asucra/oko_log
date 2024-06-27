@@ -7,6 +7,12 @@ ja:
       create: 登録
       submit: 保存
       update: 更新
+  before_login_header:
+    sign_in: ログイン
+  welcomes:
+    index:
+      sign_up: 新規登録
+      redirect_message: ログイン中です
   homes:
     index:
       one_week_record: 一週間の記録
