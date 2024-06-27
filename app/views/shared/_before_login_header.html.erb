@@ -1,16 +1,16 @@
 <header>
-  <div class="navbar bg-base-100">
+  <div class="navbar bg-green text-white font-semibold py-3">
     <div class="flex-1">
-      <a class="btn btn-ghost text-xl">Oko_log</a>
+      <%= link_to 'Oko_log', root_path, class: "text-3xl font-bold" %>
     </div>
     <div class="flex-none">
       <ul class="menu menu-horizontal px-1">
-        <li><a>Link</a></li>
-        <li><a>Link</a></li>
+        <li><%= link_to 'Oko_logとは', '#Oko_log' %></li>
+        <li><%= link_to '使い方', '#how_to_use' %></li>
       </ul>
     </div>
-    <button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">
-      <%= link_to 'ログイン', new_user_session_path %>
+    <button class="btn btn-xs sm:btn-sm md:btn-md bg-yellow text-green">
+      <%= link_to t('before_login_header.sign_in'), new_user_session_path %>
     </button>
   </div>
 </header>

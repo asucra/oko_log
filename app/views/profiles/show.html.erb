@@ -1,7 +1,21 @@
-<p>ニックネーム</p>
-<%= @user.name %>
-<p>メールアドレス</p>
-<%= @user.email %>
-<p>パスワード</p>
-<p>xxxxxxxxxxxxxx</p>
-<%= link_to '変更する', edit_user_registration_path %>
+<div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto bg-light-green">
+  <div class="mx-auto max-w-2xl">
+    <div class="text-xl text-gray-800 font-bold sm:text-3xl dark:text-white text-center my-4 ">
+      <%= t('.title') %>
+    </div>
+    <div class="container mx-auto max-w-xs flex-col text-center text-xl bg-white rounded-lg py-4">
+      <div class="my-4">
+        <div class="text-gray text-sm md:text-base"><%= t('.name') %></div>
+        <div class="md:text-lg"><%= @user.name %></div>
+      </div>
+      <div class="my-4">
+        <div class="text-gray text-sm md:text-base"><%= t('.email') %><div>
+        <div class="md:text-lg"><%= @user.email %></div>
+      </div>
+      <div class="my-4">
+        <div class="text-gray text-sm md:text-base"><%= t('.password') %></div>
+        <div class="md:text-lg">xxxxxxxxxxxxxx</div>
+      </div>
+      <%= link_to t('.edit'), edit_user_registration_path, class: "btn btn-xs sm:btn-sm md:btn-md bg-green text-white" %>
+    </div>
+</div>

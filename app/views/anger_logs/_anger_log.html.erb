@@ -1,47 +1,48 @@
 <!-- Card -->
-<div class="mt-5 p-4 relative z-10 bg-light-green border rounded-xl sm:mt-10 md:p-10 dark:bg-neutral-900 dark:border-neutral-700">
+<div class="mt-5 p-4 m-4 relative z-10 bg-light-green border rounded-xl sm:mt-10 md:p-10 dark:bg-neutral-900 dark:border-neutral-700">
   <%= form_with model: anger_log do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
     <div class="mb-4 sm:mb-8">
-      <%= f.label :occurrence_at, class: "block mb-2 text-sm font-medium dark:text-white" %>
+      <%= f.label :occurrence_at, set_required_label(:anger_log, :occurrence_at), class: "block mb-2 text-sm font-medium dark:text-white" %>
       <%= f.datetime_local_field :occurrence_at, class: "py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" %>
     </div>
 
     <div class="mb-4 sm:mb-8">
-      <%= f.label :place, class:"block mb-2 text-sm font-medium dark:text-white" %>
+      <%= f.label :place, set_required_label(:anger_log, :place), class:"block mb-2 text-sm font-medium dark:text-white" %>
       <%= f.text_field :place, class: "py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" %>
     </div>
 
-    <div>
-      <%= f.label :event, class: "block mb-2 text-sm font-medium dark:text-white" %>
+    <div class="mb-4 sm:mb-8">
+      <%= f.label :event, set_required_label(:anger_log, :event), class: "block mb-2 text-sm font-medium dark:text-white" %>
       <div class="mt-1">
         <%= f.text_area :event, maxlength: '300', class: "py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" %>
       </div>
     </div>
 
-    <div>
-    <%= f.label :thought, class: "block mb-2 text-sm font-medium dark:text-white" %>
-    <div class="mt-1">
-      <%= f.text_area :thought, maxlength: '300', class: "py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" %>
+    <div class="mb-4 sm:mb-8">
+      <%= f.label :thought, set_required_label(:anger_log, :thought), class: "block mb-2 text-sm font-medium dark:text-white" %>
+      <div class="mt-1">
+        <%= f.text_area :thought, maxlength: '300', class: "py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" %>
+      </div>
     </div>
 
-    <div>
-      <%= f.label :anger_level, class: "block mb-2 text-sm font-medium dark:text-white" %>
+    <div class="mb-4 sm:mb-8">
+      <%= f.label :anger_level, set_required_label(:anger_log, :anger_level), class: "block mb-2 text-sm font-medium dark:text-white" %>
       <%= f.number_field :anger_level, in: 1..10 %>
     </div>
 
-    <div>
-    <%= f.label :emotion_names, class: "block mb-2 text-sm font-medium dark:text-white" %>
-    <%= f.text_field :emotion_names, placeholder: ',で区切って入力してください', class: "py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" %>
-  </div>
+    <div class="mb-4 sm:mb-8">
+      <%= f.label :emotion_names, t('.emotion_names'), class: "block mb-2 text-sm font-medium dark:text-white" %>
+      <%= f.text_field :emotion_names, placeholder: ',で区切って入力してください', class: "py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" %>
+    </div>
 
-    <div>
-      <%= f.label :tag_names, class: "block mb-2 text-sm font-medium dark:text-white" %>
+    <div class="mb-4 sm:mb-8">
+      <%= f.label :tag_names, t('.tag_names'), class: "block mb-2 text-sm font-medium dark:text-white" %>
       <%= f.text_field :tag_names, placeholder: ',で区切って入力してください', class: "py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" %>
     </div>
 
-    <div>
-    <%= f.label :review, class: "block mb-2 text-sm font-medium dark:text-white" %>
+    <div class="mb-4 sm:mb-8">
+      <%= f.label :review, class: "block mb-2 text-sm font-medium dark:text-white" %>
     <div class="mt-1">
       <%= f.text_area :review, maxlength: '300', class: "py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" %>
     </div>
@@ -49,7 +50,6 @@
     <div class="mt-6 grid">
       <%= f.submit nil, class: "w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-green text-white hover:bg-dark-green disabled:opacity-50 disabled:pointer-events-none" %>
     </div>
-  
   <% end %>
 </div>
 <!-- End Card -->

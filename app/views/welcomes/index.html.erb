@@ -1,7 +1,20 @@
-<h1>Oko_logとは</h1>
-<p>日常で感じる怒りを記録（アンガーログ）するアプリです。<br>
-怒りを記録・視覚化することで、怒りをコントロールする手助けをします。</p>
-<button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">
-  <%= link_to "新規登録する", new_user_registration_path %>
-</button>
-<button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">ゲストログイン</button>
+<div class="p-4">
+  <div id="Oko_log" class="text-2xl  py-4">Oko_logとは</div>
+    <div>日常で感じる怒りを記録（アンガーログ）する為のアプリです。<br>
+      怒りを記録・視覚化することで、怒りをコントロールする手助けをします。
+    </div>
+  <button class="btn btn-xs sm:btn-sm md:btn-md bg-green text-white my-4">
+    <%= link_to t('.sign_up'), new_user_registration_path %>
+  </button>
+
+  <div id="how_to_use" class="py-4 my-4">
+    <div class="text-2xl">
+      使い方
+    </div>
+      <ul class="flex flex-col my-4">
+        <li>①日常で怒りを感じたら、出来事を日時や場所を含めて記録します。</li>
+        <li>②振り返りできるよう、振り返り欄を設けています。</li>
+        <li>　怒りが落ち着いたら、振り返りも記載してみましょう。</li>
+      </ul>
+  </div>
+</div>

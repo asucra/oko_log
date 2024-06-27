@@ -1,16 +1,46 @@
 <header>
-  <div class="navbar bg-base-100">
-    <div class="flex-1">
-      <a class="btn btn-ghost text-xl">Oko_log</a>
+<div class="drawer text-white">
+  <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
+  <div class="drawer-content flex flex-col">
+    <!-- Navbar -->
+    <div class="navbar bg-green w-full">
+      <div class="flex-none lg:hidden">
+        <label for="my-drawer-3" aria-label="open sidebar" class="btn btn-square btn-ghost">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            class="inline-block h-6 w-6 stroke-current">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </label>
+      </div>
+      <%= link_to 'Oko_log', homes_path, class:"mx-2 flex-1 px-2 text-2xl" %>
+      <div class="hidden flex-none lg:block">
+        <ul class="menu menu-horizontal">
+          <!-- Navbar menu content here -->
+          <li><%= link_to t('header.create_anger_log'), new_anger_log_path %></li>
+          <li><%= link_to t('header.anger_logs_index'), anger_logs_path %></li>
+          <li><%= link_to t('header.profile'), profile_path %></li>
+          <li><%= link_to t('header.sgin_out'), destroy_user_session_path, data: { 'turbo-method': :delete } %></li>
+        </ul>
+      </div>
     </div>
-    <div class="flex-none">
-      <ul class="menu menu-horizontal px-1">
-        <li><a>Link</a></li>
-        <li><a>Link</a></li>
-      </ul>
-    </div>
-    <button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">
-      <%= link_to 'ログアウト', destroy_user_session_path, data: { 'turbo-method': :delete } %>
-    </button>
   </div>
+  <div class="drawer-side ">
+    <label for="my-drawer-3" aria-label="close sidebar" class="drawer-overlay"></label>
+    <ul class="menu bg-green min-h-full w-64 p-4">
+      <!-- Sidebar content here -->
+      <%= link_to 'Oko_log', homes_path, class: "text-xl py-4"%>
+      <li><%= link_to t('header.create_anger_log'), new_anger_log_path %></li>
+      <li><%= link_to t('header.anger_logs_index'), anger_logs_path %></li>
+      <li><%= link_to t('header.profile'), profile_path %></li>
+      <li><%= link_to t('header.sgin_out'), destroy_user_session_path, data: { 'turbo-method': :delete } %></li>
+    </ul>
+  </div>
+</div>
 </header>

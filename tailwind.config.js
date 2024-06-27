@@ -8,7 +8,6 @@ module.exports = {
   ],
   plugins: [
     require('daisyui'),
-    require('preline/plugin')
   ],
   theme: {
     extend: {
@@ -18,7 +17,11 @@ module.exports = {
         'dark-green': '#274e4a',
         'white': '#FFFFFF',
         'yellow': '#FBC607',
+        'gray': '#374151',
       }
-    }
-  }
+    },
+    container: {
+      center: true,
+    },
+  },
 }
