@@ -37,5 +37,14 @@ ja:
       failure: 更新できませんでした
     destroy:
       success: 削除しました
+  devise:
+    shared:
+      links:
+        sign_up: 新規登録はこちら
+        forgot_your_password?: パスワードをお忘れの方
+        didn't_receive_confirmation_instructions: 確認メールが届かない方はこちら
+    sessions:
       new:
-        
+        title: ログイン
+        sign_in: ログイン
+
