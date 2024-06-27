@@ -37,6 +37,13 @@ ja:
       failure: 更新できませんでした
     destroy:
       success: 削除しました
+  profiles:
+    show:
+      title: ユーザー情報
+      name: ニックネーム
+      email: メールアドレス
+      password: パスワード
+      edit: 変更する
   devise:
     shared:
       links:
