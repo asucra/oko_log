@@ -7,10 +7,35 @@ ja:
       create: 登録
       submit: 保存
       update: 更新
+  homes:
+    index:
+      one_week_record: 一週間の記録
   anger_logs:
-    new:
-      title: アンガーログ入力
+    anger_log:
+      emotion_names: 怒り以外の感情
+      tag_names: タグ
+    anger_logs:
+      place: 場所
+      event: 怒ったこと
+      thought: 考えたこと
+      anger_level: 怒りの強さ
+      emotions: 怒り以外に感じた感情
+      review: 振り返り
+      edit: 編集
+      delete: 削除    
     index:
       title: アンガーログ一覧
+    new:
+      title: アンガーログ入力
+    create:
+      success: 記録しました
+      failure: 記録できませんでした
     edit:
       title: アンガーログ編集
+    update:
+      success: 更新しました
+      failure: 更新できませんでした
+    destroy:
+      success: 削除しました
+      new:
+        

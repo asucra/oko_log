@@ -1,0 +1,45 @@
+<% anger_logs.each do |anger_log| %>
+  <div class="mt-5 p-4 relative z-10 bg-white border rounded-xl sm:mt-10 md:p-10 dark:bg-neutral-900 dark:border-neutral-700">
+    <div class="flex justify-between mb-4 text-sm md:text-base ">
+      <%= l anger_log.occurrence_at, format: :shout, class:"text-left" %>
+      <div class="text-right" ><%= "#{ t(".place") } : #{ anger_log.place }" %></div>
+    </div>
+    <div class="my-3">
+      <div class="text-gray text-sm md:text-base"><%= t('.event') %></div>
+      <div class="md:text-lg"><%= anger_log.event %></div>
+    </div>
+    <div class="my-3">
+      <div class="text-gray text-sm md:text-base"><%= t('.thought') %></div>
+      <div class="md:text-lg"><%= anger_log.thought %></div>
+    </div>
+    <div class="my-3">
+      <div class="text-gray text-sm md:text-base"><%= t('.anger_level') %></div>
+      <div class="md:text-lg"><%= anger_log.anger_level %></div>
+    </div>
+    <div class="my-3">
+      <div class="text-gray text-sm md:text-base"><%= t('.emotions') %></div>
+      <div class="md:text-lg">
+        <% anger_log.emotions.each do |emotion| %>
+          <%= emotion.name %>
+        <% end %>
+      </div>
+    </div>
+    <div class="my-3">
+      <div class="text-gray text-sm md:text-base"><%= t('.review') %></div>
+      <div class="md:text-lg"><%= anger_log.review %></div>
+    </div>
+    <div class="flex">
+      <% anger_log.tags.each do |tag| %>
+        <div><%= "##{tag.name}" %></div>
+      <% end %>
+    </div>
+</div>
+<div class="flex h-4 w-4 text-green"%>
+  <%= link_to edit_anger_log_path(anger_log), class: "btn btn-xs sm:btn-sm md:btn-md m-1" do %>
+    <%= t('.edit') %>
+  <% end %>
+  <%= link_to anger_log_path(anger_log), data: { turbo_method: "delete", turbo_confirm: '削除してよろしいですか？'}, class: "btn btn-xs sm:btn-sm md:btn-md m-1" do %>
+    <%= t('.delete') %>
+  <% end %>
+</div>
+<% end %>

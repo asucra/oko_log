@@ -1,40 +1,10 @@
-<div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+<div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto bg-light-green">
   <div class="mx-auto max-w-2xl">
-    <div class="text-center">
-      <h2 class="text-xl text-gray-800 font-bold sm:text-3xl dark:text-white">
+    <div class="text-center my-4">
+      <div class="text-xl text-gray-800 font-bold sm:text-3xl dark:text-white ">
         アンガーログ一覧
-      </h2>
+      </div>
     </div>
-
-    <% @anger_logs.each do |anger_log| %>
-      <div class="mt-5 p-4 relative z-10 bg-light-green border rounded-xl sm:mt-10 md:p-10 dark:bg-neutral-900 dark:border-neutral-700">
-        <%= l anger_log.occurrence_at, format: :shout %>
-          <div class="">
-            <%= "場所: #{ anger_log.place }" %>
-          </div>
-          <p>怒ったこと</p>
-          <%= anger_log.event %>
-          <p>考えたこと<p>
-          <%= anger_log.thought %>
-          <%= "怒りの強さ: #{ anger_log.anger_level }" %>
-          <p>怒り以外に感じた感情</p>
-          <% anger_log.emotions.each do |emotion| %>
-            <%= emotion.name %>
-          <% end %>
-          <p>振り返り</p>
-          <%= anger_log.review %>
-          <% anger_log.tags.each do |tag| %>
-            <%= "##{tag.name}" %>
-          <% end %>
-      </div>
-      <div class="flex h-4 w-4 text-green"%>
-        <%= link_to edit_anger_log_path(anger_log), class: "btn btn-xs sm:btn-sm md:btn-md lg:btn-lg" do %>
-          <p>編集</p>
-        <% end %>
-        <%= link_to anger_log_path(anger_log), data: { turbo_method: "delete", turbo_confirm: '削除してよろしいですか？'}, class: "btn btn-xs sm:btn-sm md:btn-md lg:btn-lg" do %>
-          <p>削除</p>
-        <% end %>
-      </div>
-    <% end %>
-  </dev>
-</dev>
+    <%= render 'anger_logs/anger_logs', anger_logs: @anger_logs %>
+  </div>
+</div>
