@@ -9,6 +9,11 @@ ja:
       update: 更新
   before_login_header:
     sign_in: ログイン
+  header:
+    create_anger_log: アンガーログ入力
+    anger_logs_index: アンガーログ一覧
+    profile: マイページ
+    sgin_out: ログアウト
   welcomes:
     index:
       sign_up: 新規登録
