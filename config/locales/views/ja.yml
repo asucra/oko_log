@@ -58,6 +58,7 @@ ja:
   devise:
     shared:
       links:
+        log_in: ログイン
         sign_up: 新規登録はこちら
         forgot_your_password?: パスワードをお忘れの方
         didn't_receive_confirmation_instructions: 確認メールが届かない方はこちら
