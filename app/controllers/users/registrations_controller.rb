@@ -60,7 +60,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super(resource)
   # end
   # ユーザー情報編集後のリダイレクト先の変更
-  def after_update_path_for
+  def after_update_path_for(resource)
     profile_path
   end
 end
