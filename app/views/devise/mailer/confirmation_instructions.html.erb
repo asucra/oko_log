@@ -1,5 +1,7 @@
-<p>Welcome <%= @email %>!</p>
+<p>こんにちは。 <%= @resource.name %>さん</p>
+<p>Oko_logをご利用いただきありがとうございます</p>
 
-<p>You can confirm your account email through the link below:</p>
+<p>アカウントの認証を受付しました</p>
+<p>下記のリンクからアカウントの認証を行なってください</p>
 
-<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+<p><%= link_to 'アカウントを認証する', confirmation_url(@resource, confirmation_token: @token) %></p>

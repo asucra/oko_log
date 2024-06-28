@@ -1,7 +1,8 @@
-<p>Hello <%= @email %>!</p>
+<p>こんにちは。 <%= @name %>さん!</p>
+<p>いつもOko_logをご利用いただきありがとうございます。</p>
 
 <% if @resource.try(:unconfirmed_email?) %>
-  <p>We're contacting you to notify you that your email is being changed to <%= @resource.unconfirmed_email %>.</p>
+  <p>メールアドレスが次のように変更されることをお知らせするためにご連絡しています。<%= @resource.unconfirmed_email %>.</p>
 <% else %>
-  <p>We're contacting you to notify you that your email has been changed to <%= @resource.email %>.</p>
+  <p>メールアドレスが次のように変更されたことをお知らせするためにご連絡しています。 <%= @resource.email %></p>
 <% end %>
