@@ -1,37 +1,43 @@
-<div class="container mx-auto my-4 h-screen">
-  <p class='text-center text-xl'>
-    Sign up
-  <p/>
-  <div class="container mx-auto max-w-xs flex-col text-center" >
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= render "devise/shared/error_messages", resource: resource %>
-      <div class="filed">
-        <%= f.label :name %>
-        <%= f.text_field :name, class:'input input-bordered w-full max-w-xs' %>
+<div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+  <div class="mx-auto max-w-2xl">
+    <div class="text-center my-4">
+      <div class="text-xl text-gray-800 font-bold sm:text-3xl dark:text-white ">
+        <%= t('.title') %>
       </div>
-      <div class="field">
-        <%= f.label :email %>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:'input input-bordered w-full max-w-xs' %>
-      </div>
+    </div>
+    <div class="container mx-auto max-w-xs flex-col text-center m-4 p-4 bg-light-green rounded-lg">
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+        <div class="field mb-4 sm:mb-8">
+          <%= f.label :name %>
+          <%= f.text_field :name, class:'input input-bordered w-full max-w-xs' %>
+        </div>
+        <div class="field mb-4 sm:mb-8">
+          <%= f.label :email %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class:'input input-bordered w-full max-w-xs' %>
+        </div>
 
-      <div class="field">
-        <%= f.label :password %>
-        <% if @minimum_password_length %>
-        <em>(<%= @minimum_password_length %> characters minimum)</em>
-        <% end %><br />
-        <%= f.password_field :password, autocomplete: "new-password", class:'input input-bordered w-full max-w-xs' %>
-      </div>
+        <div class="field mb-4 sm:mb-8">
+          <%= f.label :password %>
+          <% if @minimum_password_length %>
+          <em>(<%=" #{ @minimum_password_length } #{ t('.characters_minimum') }" %>)</em>
+          <% end %><br />
+          <%= f.password_field :password, autocomplete: "new-password", class:'input input-bordered w-full max-w-xs' %>
+        </div>
 
-      <div class="field">
-        <%= f.label :password_confirmation %>
-        <%= f.password_field :password_confirmation, autocomplete: "new-password",class:'input input-bordered w-full max-w-xs' %>
-      </div>
+        <div class="field mb-4 sm:mb-8">
+          <%= f.label :password_confirmation %>
+          <%= f.password_field :password_confirmation, autocomplete: "new-password",class:'input input-bordered w-full max-w-xs' %>
+        </div>
 
-      <div class="actions">
-        <%= f.submit nil, class: "btn btn-xs sm:btn-sm md:btn-md lg:btn-lg bg-green text-white" %>
-      </div>
-    <% end %>
-    <%= render "devise/shared/links" %>
+        <div class="actions mb-4 sm:mb-8">
+          <%= f.submit nil, class: "btn btn-xs sm:btn-sm md:btn-md bg-green text-white" %>
+        </div>
+      <% end %>
+    </div>
+    <div class="text-center">
+      <%= render "devise/shared/links" %>
+    </div>
   </div>
 </div>
 

@@ -66,4 +66,15 @@ ja:
       new:
         title: ログイン
         sign_in: ログイン
-
+    confirmations:
+      new:
+        title: 認証メールの再送信
+        resend_confirmation_instructions: 認証メールを再送信する
+    registrations:
+      new:
+        title: 新規登録
+        characters_minimum: 文字以上
+    passwords:
+      new:
+        title: パスワード再設定
+        send_me_reset_password_instructions: パスワードを再設定する
