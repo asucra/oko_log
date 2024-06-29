@@ -1,1 +1,2 @@
 host: 'oko-log-app-ffa0745e6641.heroku.com'
+protocol: 'https'
