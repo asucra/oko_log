@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'from@example.com'
+  default from: 'sandboxbd5c14ee3c2b485fbfb6ea0001a79891.mailgun.orgm'
   layout 'mailer'
 end
