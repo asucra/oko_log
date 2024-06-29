@@ -74,7 +74,11 @@ ja:
       new:
         title: 新規登録
         characters_minimum: 文字以上
+      edit:
+        title: ユーザー編集
+        characters_minimun: 文字以上
     passwords:
       new:
         title: パスワード再設定
         send_me_reset_password_instructions: パスワードを再設定する
+      
