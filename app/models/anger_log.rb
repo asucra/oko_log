@@ -5,7 +5,8 @@ class AngerLog < ApplicationRecord
   has_many :anger_log_emotions, dependent: :destroy
   has_many :emotions, through: :anger_log_emotions
 
-  validates :occurrence_at, presence: true, comparison: { less_than_or_equal_to: Time.current }
+  validates :occurrence_at, presence: true
+  validate :occurrence_at_cannot_be_in_the_future
   validates :place, presence: true, length: { maximum: 255 }
   validates :event, :thought, presence: true
   validates :anger_level, presence: true, numericality: { only_integer: true, less_than_or_equal_to: 10, greater_than_or_equal_to: 1 }
@@ -26,5 +27,13 @@ class AngerLog < ApplicationRecord
 
   def emotion_names
     emotions.map(&:name).join(',')
+  end
+
+  private
+
+  def occurrence_at_cannot_be_in_the_future
+    if occurrence_at.present? && occurrence_at > Time.current
+      errors.add(:occurrence_at, 'は現在時刻以前の時刻を入力してください')
+    end
   end
 end
